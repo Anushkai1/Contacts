@@ -6,6 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    
+    <!--Start Header-->
+    <!--Header Bg-->
+    <TextView
+        android:id="@+id/bgTitle"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@drawable/bgborder1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!--End Header and Start Body-->
+
+    <!--End Body and Start Navbar-->
+    <!--Navbar Bg-->
+    <TextView
+        android:id="@+id/bgNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@drawable/bgborder2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
