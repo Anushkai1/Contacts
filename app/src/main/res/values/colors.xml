@@ -2,4 +2,23 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#06A247</color>
+    <color name="secondary">#0BC558</color>
+    <color name="ancent">#3AE17F</color>
+
+    <color name="text1">#2A2A2A</color>
+    <color name="text2">#313131</color>
+    <color name="text3">#414141</color>
+    <color name="text4">#5A5A5A</color>
+    <color name="text5">#B8B8B8</color>
+
+    <color name="bg1">#FFFEFE</color>
+    <color name="bg2">#F9F9F9</color>
+    <color name="bg3">#F3F3F3</color>
+    <color name="acentBg">#251FD895</color>
+
+    <color name="border">#C6C6C6</color>
+
+    <color name="transparent">#00C6C6C6</color>
 </resources>
