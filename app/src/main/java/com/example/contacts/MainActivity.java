@@ -26,25 +26,25 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnNewContact = findViewById(R.id.btnNewContact);
-
-        btnNewContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Form.class);
-                startActivity(intent);
-            }
-        });
-
-        btnViewContact = findViewById(R.id.btnViewContact);
-
-        btnViewContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                startActivity(intent);
-            }
-        });
+//        btnNewContact = findViewById(R.id.btnNewContact);
+//
+//        btnNewContact.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Form.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        btnViewContact = findViewById(R.id.btnViewContact);
+//
+//        btnViewContact.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }
