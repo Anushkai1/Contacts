@@ -28,6 +28,51 @@
         app:layout_constraintBottom_toBottomOf="@+id/headerbg"
         app:layout_constraintEnd_toEndOf="@+id/headerbg"
         app:layout_constraintTop_toTopOf="parent" />
+    
+    <!--Search-->
+    <TextView
+        android:id="@+id/searchbg"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginEnd="72dp"
+        android:background="@drawable/search_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/headerbg"
+        app:layout_constraintEnd_toStartOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/headerbg" />
+
+    <TextView
+        android:id="@+id/searchico"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@+id/searchbg"
+        app:layout_constraintStart_toStartOf="@+id/searchbg"
+        app:layout_constraintTop_toTopOf="@+id/searchbg" />
+
+    <EditText
+        android:id="@+id/search_no"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="96dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/transparent"
+        android:ems="10"
+        android:fontFamily="@font/medium"
+        android:hint="Search Contact..."
+        android:inputType="text"
+        android:paddingTop="2dp"
+        android:text=""
+        android:textColor="@color/text2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchbg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchbg" />
+    <!--End of Search-->
 
     <!--End Header and Start Body-->
 
@@ -51,6 +96,7 @@
         android:text="Dial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/navBtnContact" />
+
     <Button
         android:id="@+id/navBtnContact"
         style="@style/navBtn"
