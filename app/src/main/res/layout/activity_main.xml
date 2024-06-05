@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    
+
     <!--Start Header-->
     <!--Header Bg-->
     <TextView
@@ -30,5 +30,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!--NavBar-->
+    <Button
+        android:id="@+id/navBtnDial"
+        style="@style/navBtn"
+        android:layout_marginEnd="48dp"
+        android:drawableTop="@drawable/call"
+        android:text="Dial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navBtnContact" />
+    <Button
+        android:id="@+id/navBtnContact"
+        style="@style/navBtn"
+        android:drawableTop="@drawable/user"
+        android:text="Contacts"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/navBtnMessage"
+        style="@style/navBtn"
+        android:layout_marginStart="48dp"
+        android:drawableTop="@drawable/message"
+        android:text="Message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navBtnContact" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
