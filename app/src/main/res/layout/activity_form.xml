@@ -7,4 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".Form">
 
+    <!--Start Header-->
+    <!--Header Bg-->
+    <TextView
+        android:id="@+id/headerbg"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/bgborder1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--End Header and Start Body-->
+
+    <!--End Body and Start Navbar-->
+    <!--Navbar Bg-->
+    <TextView
+        android:id="@+id/bgNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@drawable/bgborder2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--NavBar-->
+    <Button
+        android:id="@+id/navBtnDial"
+        style="@style/navBtn"
+        android:layout_marginEnd="48dp"
+        android:drawableTop="@drawable/call"
+        android:text="Dial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navBtnContact" />
+
+    <Button
+        android:id="@+id/navBtnContact"
+        style="@style/navBtn"
+        android:drawableTop="@drawable/user"
+        android:text="Contacts"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/navBtnMessage"
+        style="@style/navBtn"
+        android:layout_marginStart="48dp"
+        android:drawableTop="@drawable/message"
+        android:text="Message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navBtnContact" />
+
+    <TextView
+        android:id="@+id/activenavBG"
+        android:layout_width="46dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/activenavbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
