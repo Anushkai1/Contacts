@@ -60,15 +60,15 @@
         app:layout_constraintTop_toBottomOf="@+id/headerbg" />
 
     <EditText
-        android:inputType="text"
-        android:text="Anushka Isuru"
-        android:hint="Name"
         android:id="@+id/input_name"
         style="@style/edit_text"
         android:layout_width="match_parent"
         android:layout_marginLeft="132dp"
         android:layout_marginRight="@dimen/RootMargin"
+        android:hint="Name"
         android:imeOptions="actionNext"
+        android:inputType="text"
+        android:text="Anushka Isuru"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_name"
         app:layout_constraintTop_toBottomOf="@+id/lable_name" />
@@ -76,22 +76,22 @@
     <TextView
         android:id="@+id/lable_phone"
         style="@style/input_label"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="132dp"
+        android:layout_marginTop="24dp"
         android:text="Phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_name" />
 
     <EditText
-        android:inputType="text"
-        android:text="+94 77 88 45 123"
-        android:hint="Phone"
         android:id="@+id/input_phone"
         style="@style/edit_text"
         android:layout_width="match_parent"
         android:layout_marginLeft="132dp"
         android:layout_marginRight="@dimen/RootMargin"
+        android:hint="Phone"
         android:imeOptions="actionNext"
+        android:inputType="text"
+        android:text="+94 77 88 45 123"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_phone"
         app:layout_constraintTop_toBottomOf="@+id/lable_phone" />
@@ -99,22 +99,22 @@
     <TextView
         android:id="@+id/lable_email"
         style="@style/input_label"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="132dp"
+        android:layout_marginTop="24dp"
         android:text="Email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_phone" />
 
     <EditText
-        android:inputType="text"
-        android:text="hello@anushkai.com"
-        android:hint="Email"
         android:id="@+id/input_email"
         style="@style/edit_text"
         android:layout_width="match_parent"
         android:layout_marginLeft="132dp"
         android:layout_marginRight="@dimen/RootMargin"
+        android:hint="Email"
         android:imeOptions="actionNext"
+        android:inputType="text"
+        android:text="hello@anushkai.com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_email"
         app:layout_constraintTop_toBottomOf="@+id/lable_email" />
