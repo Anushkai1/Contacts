@@ -27,6 +27,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/headerbg"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/formTitle"
+        style="@style/h1"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="16dp"
+        android:text="New Contact"
+        app:layout_constraintBottom_toBottomOf="@+id/headerbg"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--End Header and Start Body-->
 
