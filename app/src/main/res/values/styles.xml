@@ -37,4 +37,29 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="input_label">
+        <item name="android:padding">0dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">@color/text4</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/RootMargin</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:linksClickable">false</item>
+        <item name="android:longClickable">false</item>
+    </style>
+
+    <style name="edit_text">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_marginTop">-12dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:fontFamily">@font/semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/input_bg</item>
+    </style>
+
 </resources>

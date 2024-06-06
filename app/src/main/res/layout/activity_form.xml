@@ -49,6 +49,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerbg" />
 
+    <!-- Form-->
+    <TextView
+        android:id="@+id/lable_name"
+        style="@style/input_label"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="40dp"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerbg" />
+
+    <EditText
+        android:id="@+id/input_name"
+        style="@style/edit_text"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="124dp"
+        android:layout_marginRight="@dimen/RootMargin"
+        android:hint="Name"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:text="Anushka Isuru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lable_name"
+        app:layout_constraintTop_toBottomOf="@+id/lable_name" />
+    <!-- End Form-->
+
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
     <TextView
