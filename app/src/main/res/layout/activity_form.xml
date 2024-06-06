@@ -120,6 +120,29 @@
         app:layout_constraintTop_toBottomOf="@+id/lable_email" />
 
     <!-- End Form-->
+    <Button
+        android:id="@+id/btnSave"
+        style="@style/btn1"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        style="@style/btn2"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
