@@ -10,6 +10,16 @@
     <!--Start Header-->
 
     <!--Header Bg-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/view_contact_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/headerbg"
         android:layout_width="match_parent"
