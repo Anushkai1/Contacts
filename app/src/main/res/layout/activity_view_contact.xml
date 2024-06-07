@@ -8,6 +8,7 @@
     tools:context=".ViewContact">
 
     <!--Start Header-->
+
     <!--Header Bg-->
     <TextView
         android:id="@+id/headerbg"
@@ -66,6 +67,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerbg"
         app:srcCompat="@drawable/a" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="12dp"
+        android:padding="2dp"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:fontFamily="@font/semibold"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:text="Anushka Isuru"
+        android:textColor="@color/text2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewProfilePic" />
+
+    <TextView
+        android:id="@+id/phoneText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="-6dp"
+        android:padding="2dp"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:text="+94 77 05 45 123"
+        android:textColor="@color/text4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
