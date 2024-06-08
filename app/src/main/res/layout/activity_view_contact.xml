@@ -11,8 +11,9 @@
 
     <!--Header Bg-->
     <ImageView
+        android:id="@+id/topBg"
         android:layout_width="wrap_content"
-        android:layout_height="280dp"
+        android:layout_height="268dp"
         android:layout_gravity="center"
         android:scaleType="fitXY"
         android:src="@drawable/view_contact_bg"
@@ -72,7 +73,7 @@
         android:id="@+id/viewProfilePic"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerbg"
@@ -114,6 +115,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
+<!-- Green Middle Buttons-->
+    <Button
+        android:id="@+id/call_g"
+        style="@style/greenBtn"
+        android:layout_marginTop="16dp"
+        android:drawableBottom="@drawable/call_g"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBg" />
+
+    <Button
+        style="@style/greenBtn"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:drawableBottom="@drawable/message_g"
+        app:layout_constraintEnd_toStartOf="@+id/call_g"
+        app:layout_constraintTop_toTopOf="@+id/call_g" />
+
+    <Button
+        style="@style/greenBtn"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:drawableBottom="@drawable/video_call_g"
+        app:layout_constraintStart_toEndOf="@+id/call_g"
+        app:layout_constraintTop_toTopOf="@+id/call_g" />
+    <!-- Green Middle Buttons-->
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
