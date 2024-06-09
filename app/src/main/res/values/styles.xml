@@ -39,12 +39,12 @@
     </style>
 
     <style name="h2">
-        <item name="android:letterSpacing">0.06</item>
-        <item name="android:textColor">@color/text3</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/primary</item>
         <item name="android:fontFamily">@font/medium</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="h4">
@@ -161,7 +161,7 @@
         <item name="android:paddingRight">4dp</item>
         <item name="android:layout_width">52dp</item>
         <item name="android:layout_height">76dp</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">4dp</item>
         <item name="android:letterSpacing">0.02</item>
         <item name="android:textColor">@color/text4</item>
         <item name="android:fontFamily">@font/medium</item>
@@ -170,5 +170,35 @@
         <item name="android:gravity">center</item>
         <item name="android:lineSpacingExtra">-3dp</item>
         <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="contact_image">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="contact_name">
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">@color/text4</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="contact_phone">
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/text4</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineSpacingExtra">-3dp</item>
     </style>
 </resources>
