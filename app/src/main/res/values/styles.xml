@@ -31,11 +31,20 @@
 
     <style name="h1">
         <item name="android:letterSpacing">0.04</item>
-        <item name="android:textColor">@color/text1</item>
-        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:fontFamily">@font/semibold</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="h2">
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:fontFamily">@font/semibold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="input_label">
@@ -109,6 +118,16 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:elevation">0dp</item>
         <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="callIconTypes">
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginStart">@dimen/RootMargin</item>
+        <item name="android:layout_marginTop">@dimen/RootMargin</item>
     </style>
 
 </resources>
