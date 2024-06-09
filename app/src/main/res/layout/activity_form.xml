@@ -68,7 +68,7 @@
         android:hint="Name"
         android:imeOptions="actionNext"
         android:inputType="text"
-        android:text="Anushka Isuru"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_name"
         app:layout_constraintTop_toBottomOf="@+id/lable_name" />
@@ -91,7 +91,7 @@
         android:hint="Phone"
         android:imeOptions="actionNext"
         android:inputType="text"
-        android:text="+94 77 88 45 123"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_phone"
         app:layout_constraintTop_toBottomOf="@+id/lable_phone" />
@@ -114,7 +114,7 @@
         android:hint="Email"
         android:imeOptions="actionNext"
         android:inputType="text"
-        android:text="hello@anushkai.com"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lable_email"
         app:layout_constraintTop_toBottomOf="@+id/lable_email" />

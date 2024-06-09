@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,16 @@ private Button btnBack;
                 back();
             }
         });
+
+
+        TextView textView = findViewById(R.id.formTitle);
+        textView.setText(getIntent().getStringExtra("formTitle"));
+
+        textView = findViewById(R.id.input_name);
+        textView.setText(getIntent().getStringExtra("input_name"));
+
+        textView = findViewById(R.id.input_phone);
+        textView.setText(getIntent().getStringExtra("input_phone"));
 
     }
     private void back(){
