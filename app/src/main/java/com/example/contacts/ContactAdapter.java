@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,11 +17,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     Context ct;
     int[] imgs;
     MainActivity.Contact[] contacts;
+    private SelectListenr selectListenr;
 
-    public ContactAdapter(Context ct2, MainActivity.Contact[] contacts2, int[] imgs2) {
+    public ContactAdapter(Context ct2, MainActivity.Contact[] contacts2, int[] imgs2, SelectListenr selectListenr2) {
         ct = ct2;
         contacts = contacts2;
         imgs = imgs2;
+        selectListenr = selectListenr2;
     }
 
     @NonNull
@@ -28,7 +31,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public ContactAdapter.ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ct);
         View view = inflater.inflate(R.layout.contact, parent, false);
-        return new ContactViewHolder(view);
+        return new ContactViewHolder(view,selectListenr);
     }
 
     @Override
@@ -48,11 +51,23 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         TextView name, phone;
         ImageView dp;
 
-        public ContactViewHolder(@NonNull View itemView) {
+        public ContactViewHolder(@NonNull View itemView, SelectListenr selectListenr2) {
             super(itemView);
             name = itemView.findViewById(R.id.contact_name);
             phone = itemView.findViewById(R.id.contact_phone);
             dp = itemView.findViewById(R.id.contactImage);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (selectListenr2 != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            selectListenr2.onItemCLicked(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SelectListenr{
     private Button btnNewContact;
     private RecyclerView recyclerView;
     private final Contact[] contacts = {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Recycle view
-        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, imgs);
+        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, imgs, this);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -58,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onItemCLicked(int Position) {
+        Intent intent = new Intent(MainActivity.this, ViewContact.class);
+        intent.putExtra("formTitle", "New Contact");
+        startActivity(intent);
     }
 
     class Contact {
