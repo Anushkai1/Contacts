@@ -13,7 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnNewContact;
-    private Button btnViewContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnNewContact = findViewById(R.id.btnNewContact);
-
         btnNewContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,16 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-//        btnViewContact = findViewById(R.id.btnViewContact);
-//
-//        btnViewContact.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-//                startActivity(intent);
-//            }
-//        });
+    class Contact {
+        public String name;
+        public String phone;
+        public String email;
 
+        public Contact(String name, String phone, String email) {
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+        }
     }
 }
