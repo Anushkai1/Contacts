@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity implements SelectListenr{
     @Override
     public void onItemCLicked(int Position) {
         Intent intent = new Intent(MainActivity.this, ViewContact.class);
-        intent.putExtra("formTitle", "New Contact");
+        intent.putExtra("name", contacts[Position].name );
+        intent.putExtra("phone", contacts[Position].phone );
+        intent.putExtra("dp", imgs[Position] );
         startActivity(intent);
     }
 
