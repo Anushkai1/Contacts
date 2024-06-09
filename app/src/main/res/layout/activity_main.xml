@@ -132,17 +132,39 @@
         app:layout_constraintStart_toEndOf="@+id/favcontact4"
         app:layout_constraintTop_toBottomOf="@+id/fav" />
 
+    <!--All-->
+    <TextView
+        android:id="@+id/allc"
+        style="@style/h2"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="16dp"
+        android:text="All"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favcontact1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="240dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
     <Button
         android:id="@+id/btnNewContact"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginEnd="@dimen/RootMargin"
         android:layout_marginBottom="@dimen/RootMargin"
         android:background="@drawable/add_square"
         android:contentDescription="add Content"
         android:padding="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bgNavBar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
