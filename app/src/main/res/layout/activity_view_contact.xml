@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnback"
+        android:id="@+id/btnBack"
         style="@style/btnback"
         android:layout_marginBottom="10dp"
         android:contentDescription="back"
@@ -46,8 +46,7 @@
         android:contentDescription="edit"
         android:drawableBottom="@drawable/delete"
         app:layout_constraintBottom_toBottomOf="@+id/headerbg"
-        app:layout_constraintEnd_toEndOf="parent"
-     />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnEdit"
@@ -85,11 +84,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/RootMargin"
         android:layout_marginTop="12dp"
-        android:padding="2dp"
         android:layout_marginEnd="@dimen/RootMargin"
         android:fontFamily="@font/semibold"
         android:gravity="center"
         android:letterSpacing="0.06"
+        android:padding="2dp"
         android:text="Anushka Isuru"
         android:textColor="@color/text2"
         android:textSize="18sp"
@@ -103,11 +102,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/RootMargin"
         android:layout_marginTop="-6dp"
-        android:padding="2dp"
         android:layout_marginEnd="@dimen/RootMargin"
         android:fontFamily="@font/medium"
         android:gravity="center"
         android:letterSpacing="0.05"
+        android:padding="2dp"
         android:text="+94 77 05 45 123"
         android:textColor="@color/text4"
         android:textSize="14sp"
@@ -115,7 +114,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
-<!-- Green Middle Buttons-->
+    <!-- Green Middle Buttons-->
     <Button
         android:id="@+id/call_g"
         style="@style/greenBtn"
@@ -138,7 +137,124 @@
         android:drawableBottom="@drawable/video_call_g"
         app:layout_constraintStart_toEndOf="@+id/call_g"
         app:layout_constraintTop_toTopOf="@+id/call_g" />
-    <!-- Green Middle Buttons-->
+    <!-- End Green Middle Buttons-->
+
+    <!-- Call Log -->
+    <TextView
+        android:id="@+id/callLog"
+        style="@style/h2"
+        android:layout_marginStart="@dimen/RootMargin"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/RootMargin"
+        android:text="Call Log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/call_g" />
+
+    <ImageView
+        android:id="@+id/call_log1"
+        style="@style/callIconTypes"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callLog"
+        app:srcCompat="@drawable/outgoing_call" />
+
+    <TextView
+        style="@style/h4"
+        android:layout_marginTop="-5dp"
+        android:text="Today, 12.13AM"
+        app:layout_constraintStart_toEndOf="@+id/call_log1"
+        app:layout_constraintTop_toTopOf="@+id/call_log1" />
+
+    <TextView
+        style="@style/h6"
+        android:layout_marginTop="12dp"
+        android:text="10min 16sec"
+        app:layout_constraintStart_toEndOf="@+id/call_log1"
+        app:layout_constraintTop_toTopOf="@+id/call_log1" />
+
+    <ImageView
+        android:id="@+id/call_log2"
+        style="@style/callIconTypes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/call_log1"
+        app:srcCompat="@drawable/incoming_call" />
+
+    <TextView
+        style="@style/h4"
+        android:layout_marginTop="-5dp"
+        android:text="Today, 12.13AM"
+        app:layout_constraintStart_toEndOf="@+id/call_log2"
+        app:layout_constraintTop_toTopOf="@+id/call_log2" />
+
+    <TextView
+        style="@style/h6"
+        android:layout_marginTop="12dp"
+        android:text="10min 16sec"
+        app:layout_constraintStart_toEndOf="@+id/call_log2"
+        app:layout_constraintTop_toTopOf="@+id/call_log2" />
+
+    <ImageView
+        android:id="@+id/call_log3"
+        style="@style/callIconTypes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/call_log2"
+        app:srcCompat="@drawable/missed_call" />
+
+    <TextView
+        style="@style/h4"
+        android:layout_marginTop="-5dp"
+        android:text="Today, 12.13AM"
+        app:layout_constraintStart_toEndOf="@+id/call_log3"
+        app:layout_constraintTop_toTopOf="@+id/call_log3" />
+
+    <TextView
+        style="@style/h6"
+        android:layout_marginTop="12dp"
+        android:text="10min 16sec"
+        app:layout_constraintStart_toEndOf="@+id/call_log3"
+        app:layout_constraintTop_toTopOf="@+id/call_log3" />
+
+    <ImageView
+        android:id="@+id/call_log4"
+        style="@style/callIconTypes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/call_log3"
+        app:srcCompat="@drawable/incoming_call" />
+
+    <TextView
+        style="@style/h4"
+        android:layout_marginTop="-5dp"
+        android:text="Today, 12.13AM"
+        app:layout_constraintStart_toEndOf="@+id/call_log4"
+        app:layout_constraintTop_toTopOf="@+id/call_log4" />
+
+    <TextView
+        style="@style/h6"
+        android:layout_marginTop="12dp"
+        android:text="10min 16sec"
+        app:layout_constraintStart_toEndOf="@+id/call_log4"
+        app:layout_constraintTop_toTopOf="@+id/call_log4" />
+
+    <ImageView
+        android:id="@+id/call_log5"
+        style="@style/callIconTypes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/call_log4"
+        app:srcCompat="@drawable/outgoing_call" />
+
+    <TextView
+        style="@style/h4"
+        android:layout_marginTop="-5dp"
+        android:text="Today, 12.13AM"
+        app:layout_constraintStart_toEndOf="@+id/call_log5"
+        app:layout_constraintTop_toTopOf="@+id/call_log5" />
+
+    <TextView
+        style="@style/h6"
+        android:layout_marginTop="12dp"
+        android:text="10min 16sec"
+        app:layout_constraintStart_toEndOf="@+id/call_log5"
+        app:layout_constraintTop_toTopOf="@+id/call_log5" />
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->
