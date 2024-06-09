@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnNewContact;
-
+    private RecyclerView recyclerView;
     private final Contact[] contacts = {
             new Contact("Alice Johnson", "+94 71 123 4567", "alice@sjp.ac.lk"),
             new Contact("Bob Smith", "+94 72 234 5678", "bob@sjp.ac.lk"),
@@ -39,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Recycle view
+        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, imgs);
+        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView.setAdapter(contactAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //End Recycle view
 
         btnNewContact = findViewById(R.id.btnNewContact);
         btnNewContact.setOnClickListener(new View.OnClickListener() {
