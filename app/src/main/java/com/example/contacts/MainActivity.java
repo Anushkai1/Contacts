@@ -14,6 +14,21 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     private Button btnNewContact;
 
+    private final Contact[] contacts = {
+            new Contact("Alice Johnson", "+94 71 123 4567", "alice@sjp.ac.lk"),
+            new Contact("Bob Smith", "+94 72 234 5678", "bob@sjp.ac.lk"),
+            new Contact("Charlie Brown", "+94 73 345 6789", "charlie@sjp.ac.lk"),
+            new Contact("David White", "+94 74 456 7890", "david@sjp.ac.lk"),
+            new Contact("Eve Black", "+94 75 567 8901", "eve@sjp.ac.lk"),
+            new Contact("Frank Green", "+94 76 678 9012", "frank@sjp.ac.lk"),
+            new Contact("Grace Blue", "+94 77 789 0123", "grace@sjp.ac.lk"),
+            new Contact("Hank Purple", "+94 78 890 1234", "hank@sjp.ac.lk"),
+            new Contact("Ivy Red", "+94 79 901 2345", "ivy@sjp.ac.lk"),
+            new Contact("Jack Orange", "+94 70 012 3456", "jack@sjp.ac.lk"),
+    };
+
+    private final int[] imgs = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
