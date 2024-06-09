@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity implements SelectListenr{
             new Contact("Jack Orange", "+94 70 012 3456", "jack@sjp.ac.lk"),
     };
 
-    private final int[] imgs = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};
+    private final int[] imgs = {R.drawable.e, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};
+    private final int[] imgs2 = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr{
         Intent intent = new Intent(MainActivity.this, ViewContact.class);
         intent.putExtra("name", contacts[Position].name );
         intent.putExtra("phone", contacts[Position].phone );
-        intent.putExtra("dp", imgs[Position] );
+        intent.putExtra("dp", imgs2[Position] );
         startActivity(intent);
     }
 
