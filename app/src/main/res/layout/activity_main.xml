@@ -75,84 +75,106 @@
     <!--End of Search-->
 
     <!--End Header and Start Body-->
-
-    <!--Favorite-->
-    <TextView
-        android:id="@+id/fav"
-        style="@style/h2"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/RootMargin"
-        android:layout_marginTop="10dp"
-        android:text="Favorite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerbg" />
-
-    <Button
-        android:id="@+id/favcontact1"
-        style="@style/fav_contact"
-        android:layout_marginStart="@dimen/RootMargin"
-        android:drawableTop="@drawable/b"
-        android:text="Kevin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fav" />
-
-    <Button
-        android:id="@+id/favcontact2"
-        style="@style/fav_contact"
-        android:layout_marginStart="16dp"
-        android:drawableTop="@drawable/c"
-        android:text="Gwen"
-        app:layout_constraintStart_toEndOf="@+id/favcontact1"
-        app:layout_constraintTop_toBottomOf="@+id/fav" />
-
-    <Button
-        android:id="@+id/favcontact3"
-        style="@style/fav_contact"
-        android:layout_marginStart="16dp"
-        android:drawableTop="@drawable/i"
-        android:text="Oliver"
-        app:layout_constraintStart_toEndOf="@+id/favcontact2"
-        app:layout_constraintTop_toBottomOf="@+id/fav" />
-
-    <Button
-        android:id="@+id/favcontact4"
-        style="@style/fav_contact"
-        android:layout_marginStart="16dp"
-        android:drawableTop="@drawable/g"
-        android:text="Natasha"
-        app:layout_constraintStart_toEndOf="@+id/favcontact3"
-        app:layout_constraintTop_toBottomOf="@+id/fav" />
-
-    <Button
-        android:id="@+id/favcontact5"
-        style="@style/fav_contact"
-        android:layout_marginStart="16dp"
-        android:drawableTop="@drawable/d"
-        android:text="John"
-        app:layout_constraintStart_toEndOf="@+id/favcontact4"
-        app:layout_constraintTop_toBottomOf="@+id/fav" />
-
-    <!--All-->
-    <TextView
-        android:id="@+id/allc"
-        style="@style/h2"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/RootMargin"
-        android:layout_marginTop="16dp"
-        android:text="All"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favcontact1" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="240dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Favorite-->
+            <TextView
+                android:id="@+id/fav"
+                style="@style/h2"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/RootMargin"
+                android:layout_marginTop="10dp"
+                android:text="Favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headerbg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/favcontact1"
+                    style="@style/fav_contact"
+                    android:layout_marginStart="@dimen/RootMargin"
+                    android:drawableTop="@drawable/b"
+                    android:text="Kevin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fav" />
+
+                <Button
+                    android:id="@+id/favcontact2"
+                    style="@style/fav_contact"
+                    android:layout_marginStart="16dp"
+                    android:drawableTop="@drawable/c"
+                    android:text="Gwen"
+                    app:layout_constraintStart_toEndOf="@+id/favcontact1"
+                    app:layout_constraintTop_toBottomOf="@+id/fav" />
+
+                <Button
+                    android:id="@+id/favcontact3"
+                    style="@style/fav_contact"
+                    android:layout_marginStart="16dp"
+                    android:drawableTop="@drawable/i"
+                    android:text="Oliver"
+                    app:layout_constraintStart_toEndOf="@+id/favcontact2"
+                    app:layout_constraintTop_toBottomOf="@+id/fav" />
+
+                <Button
+                    android:id="@+id/favcontact4"
+                    style="@style/fav_contact"
+                    android:layout_marginStart="16dp"
+                    android:drawableTop="@drawable/g"
+                    android:text="Natasha"
+                    app:layout_constraintStart_toEndOf="@+id/favcontact3"
+                    app:layout_constraintTop_toBottomOf="@+id/fav" />
+
+                <Button
+                    android:id="@+id/favcontact5"
+                    style="@style/fav_contact"
+                    android:layout_marginStart="16dp"
+                    android:drawableTop="@drawable/d"
+                    android:text="John"
+                    app:layout_constraintStart_toEndOf="@+id/favcontact4"
+                    app:layout_constraintTop_toBottomOf="@+id/fav" />
+            </LinearLayout>
+
+
+            <!--All-->
+            <TextView
+                android:id="@+id/allc"
+                style="@style/h2"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/RootMargin"
+                android:layout_marginTop="0dp"
+                android:text="All"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/favcontact1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="560dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btnNewContact"
