@@ -38,14 +38,13 @@
 
     <!--End Header and Start Body-->
 
-    <Button
+    <ImageView
         android:id="@+id/selectUserImage"
+        app:srcCompat="@drawable/add_profile_pic"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="@dimen/RootMargin"
         android:layout_marginTop="24dp"
-        android:background="@drawable/add_profile_pic"
-        android:contentDescription="choose Profile pic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerbg" />
 

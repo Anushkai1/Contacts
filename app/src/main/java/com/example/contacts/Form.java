@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Form extends AppCompatActivity {
-private Button btnBack;
+private Button btnBack, btnCancel, btnSave;
+private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,6 @@ private Button btnBack;
         });
 
         btnBack = findViewById(R.id.btnBack);
-
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +36,21 @@ private Button btnBack;
             }
         });
 
+        btnCancel = findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+
+        btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
 
         TextView textView = findViewById(R.id.formTitle);
         textView.setText(getIntent().getStringExtra("formTitle"));
@@ -44,6 +60,9 @@ private Button btnBack;
 
         textView = findViewById(R.id.input_phone);
         textView.setText(getIntent().getStringExtra("input_phone"));
+
+        imageView = findViewById(R.id.selectUserImage);
+        imageView.setImageResource(getIntent().getIntExtra("dp",R.drawable.add_profile_pic));
 
     }
     private void back(){
