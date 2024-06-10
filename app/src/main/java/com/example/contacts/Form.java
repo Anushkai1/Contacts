@@ -66,7 +66,27 @@ private ImageView imageView;
 
     }
     private void back(){
-        Intent intent = new Intent(Form.this, MainActivity.class);
-        startActivity(intent);
+        Intent intent;
+        TextView textView = findViewById(R.id.formTitle);
+        if(textView.getText().toString().equals("New Contact")){
+
+            intent = new Intent(Form.this, MainActivity.class);
+            startActivity(intent);
+
+        }else{
+            intent = new Intent(Form.this, ViewContact.class);
+
+            textView = findViewById(R.id.input_name);
+            intent.putExtra("name", textView.getText().toString());
+
+            textView = findViewById(R.id.input_phone);
+            intent.putExtra("phone", textView.getText().toString());
+
+            startActivity(intent);
+        }
+
+
+
+
     }
 }
