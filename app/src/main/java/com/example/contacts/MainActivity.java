@@ -13,8 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity implements SelectListenr{
-    private Button btnNewContact;
+public class MainActivity extends AppCompatActivity implements SelectListenr {
+    private Button btnNewContact, Kevin, Gwen, Oliver, Natasha, John;
     private RecyclerView recyclerView;
     private final Contact[] contacts = {
             new Contact("Alice Johnson", "+94 71 123 4567", "alice@sjp.ac.lk"),
@@ -59,14 +59,75 @@ public class MainActivity extends AppCompatActivity implements SelectListenr{
                 startActivity(intent);
             }
         });
+
+        //OnClick Fav
+        Kevin = findViewById(R.id.favcontact1);
+        Kevin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+                intent.putExtra("name", "Kevin");
+                intent.putExtra("phone", "+94 70 012 3456");
+                intent.putExtra("dp", R.drawable.nb);
+                startActivity(intent);
+            }
+        });
+
+        Gwen = findViewById(R.id.favcontact2);
+        Gwen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+                intent.putExtra("name", "Gwen");
+                intent.putExtra("phone", "+94 70 012 3456");
+                intent.putExtra("dp", R.drawable.nc);
+                startActivity(intent);
+            }
+        });
+
+        Oliver = findViewById(R.id.favcontact3);
+        Oliver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+                intent.putExtra("name", "Oliver");
+                intent.putExtra("phone", "+94 70 012 3456");
+                intent.putExtra("dp", R.drawable.ni);
+                startActivity(intent);
+            }
+        });
+
+        Natasha = findViewById(R.id.favcontact4);
+        Natasha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+                intent.putExtra("name", "Natasha");
+                intent.putExtra("phone", "+94 70 012 3456");
+                intent.putExtra("dp", R.drawable.ng);
+                startActivity(intent);
+            }
+        });
+
+        John = findViewById(R.id.favcontact5);
+        John.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewContact.class);
+                intent.putExtra("name", "John");
+                intent.putExtra("phone", "+94 70 012 3456");
+                intent.putExtra("dp", R.drawable.nd);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onItemCLicked(int Position) {
         Intent intent = new Intent(MainActivity.this, ViewContact.class);
-        intent.putExtra("name", contacts[Position].name );
-        intent.putExtra("phone", contacts[Position].phone );
-        intent.putExtra("dp", imgs2[Position] );
+        intent.putExtra("name", contacts[Position].name);
+        intent.putExtra("phone", contacts[Position].phone);
+        intent.putExtra("dp", imgs2[Position]);
         startActivity(intent);
     }
 
