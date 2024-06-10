@@ -91,7 +91,7 @@
         android:padding="2dp"
         android:text="Anushka Isuru"
         android:textColor="@color/text2"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewProfilePic" />
@@ -108,7 +108,7 @@
         android:letterSpacing="0.05"
         android:padding="2dp"
         android:text="+94 77 05 45 123"
-        android:textColor="@color/text4"
+        android:textColor="@color/text6"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,14 +161,14 @@
     <TextView
         style="@style/h4"
         android:layout_marginTop="-5dp"
-        android:text="Today, 12.13AM"
+        android:text="Today, 02.26PM"
         app:layout_constraintStart_toEndOf="@+id/call_log1"
         app:layout_constraintTop_toTopOf="@+id/call_log1" />
 
     <TextView
         style="@style/h6"
         android:layout_marginTop="12dp"
-        android:text="10min 16sec"
+        android:text="6min 30sec"
         app:layout_constraintStart_toEndOf="@+id/call_log1"
         app:layout_constraintTop_toTopOf="@+id/call_log1" />
 
@@ -182,7 +182,7 @@
     <TextView
         style="@style/h4"
         android:layout_marginTop="-5dp"
-        android:text="Today, 12.13AM"
+        android:text="Today, 10.24AM"
         app:layout_constraintStart_toEndOf="@+id/call_log2"
         app:layout_constraintTop_toTopOf="@+id/call_log2" />
 
@@ -203,14 +203,14 @@
     <TextView
         style="@style/h4"
         android:layout_marginTop="-5dp"
-        android:text="Today, 12.13AM"
+        android:text="Today, 12.50AM"
         app:layout_constraintStart_toEndOf="@+id/call_log3"
         app:layout_constraintTop_toTopOf="@+id/call_log3" />
 
     <TextView
         style="@style/h6"
         android:layout_marginTop="12dp"
-        android:text="10min 16sec"
+        android:text="0sec"
         app:layout_constraintStart_toEndOf="@+id/call_log3"
         app:layout_constraintTop_toTopOf="@+id/call_log3" />
 
@@ -231,30 +231,9 @@
     <TextView
         style="@style/h6"
         android:layout_marginTop="12dp"
-        android:text="10min 16sec"
+        android:text="1min 10sec"
         app:layout_constraintStart_toEndOf="@+id/call_log4"
         app:layout_constraintTop_toTopOf="@+id/call_log4" />
-
-    <ImageView
-        android:id="@+id/call_log5"
-        style="@style/callIconTypes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/call_log4"
-        app:srcCompat="@drawable/outgoing_call" />
-
-    <TextView
-        style="@style/h4"
-        android:layout_marginTop="-5dp"
-        android:text="Today, 12.13AM"
-        app:layout_constraintStart_toEndOf="@+id/call_log5"
-        app:layout_constraintTop_toTopOf="@+id/call_log5" />
-
-    <TextView
-        style="@style/h6"
-        android:layout_marginTop="12dp"
-        android:text="10min 16sec"
-        app:layout_constraintStart_toEndOf="@+id/call_log5"
-        app:layout_constraintTop_toTopOf="@+id/call_log5" />
 
     <!--End Body and Start Navbar-->
     <!--Navbar Bg-->

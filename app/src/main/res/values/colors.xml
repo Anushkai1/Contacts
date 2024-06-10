@@ -12,13 +12,14 @@
     <color name="text3">#414141</color>
     <color name="text4">#5A5A5A</color>
     <color name="text5">#B8B8B8</color>
+    <color name="text6">#888</color>
 
     <color name="bg1">#FFFEFE</color>
     <color name="bg2">#F9F9F9</color>
     <color name="bg3">#F3F3F3</color>
     <color name="acentBg">#251FD895</color>
 
-    <color name="border">#C6C6C6</color>
+    <color name="border">#E6E6E6</color>
 
     <color name="transparent">#00C6C6C6</color>
 </resources>
