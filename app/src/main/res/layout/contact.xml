@@ -47,6 +47,37 @@
                 app:layout_constraintBottom_toBottomOf="@+id/contactImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/contact_name" />
+            <TextView
+                style="@style/contact_phone"
+                android:id="@+id/contact_email"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginBottom="60dp"
+                android:text="+94 78 78 12 456"
+                app:layout_constraintBottom_toBottomOf="@+id/contactImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/contact_name" />
+
+            <TextView
+                style="@style/contact_phone"
+                android:id="@+id/contact_id"
+                android:layout_marginStart="200dp"
+                android:layout_marginEnd="00dp"
+                android:layout_marginBottom="60dp"
+                android:text="+94 78 78 12 456"
+                app:layout_constraintBottom_toBottomOf="@+id/contactImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/contact_name" />
+            <TextView
+                style="@style/contact_phone"
+                android:id="@+id/contact_isFavorite"
+                android:layout_marginStart="0dp"
+                android:layout_width="30dp"
+                android:layout_marginEnd="00dp"
+                android:layout_marginBottom="60dp"
+                android:text="+1"
+                app:layout_constraintBottom_toBottomOf="@+id/contactImage"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/messageico"
