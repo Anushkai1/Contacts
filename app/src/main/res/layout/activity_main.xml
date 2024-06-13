@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="@+id/searchbg" />
 
     <EditText
-        android:id="@+id/search_no"
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:layout_marginStart="64dp"

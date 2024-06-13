@@ -108,11 +108,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return contactList;
     }
 
-    // Search contacts by name
-    public ArrayList<ContactNew> searchContacts(String name) {
+    // Search contacts by name or phone
+    public ArrayList<ContactNew> searchContacts(String query) {
         ArrayList<ContactNew> contactList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " LIKE ?", new String[]{"%" + name + "%"});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " LIKE ? OR " + COLUMN_PHONE + " LIKE ?", new String[]{"%" + query + "%", "%" + query + "%"});
 
         if (cursor.moveToFirst()) {
             do {

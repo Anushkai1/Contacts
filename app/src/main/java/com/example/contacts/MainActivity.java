@@ -1,9 +1,14 @@
 package com.example.contacts;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +27,10 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
     ArrayList<ContactNew> contacts = new ArrayList<>();
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
+    EditText searchEditText;
     private final int[] imgs2 = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +63,38 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //End Recycle view
+
+
+        // Set up the TextWatcher for the search EditText
+        searchEditText = findViewById(R.id.search);
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            //Search Function
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String searchText = searchEditText.getText().toString();
+                ContactAdapter contactAdapter1;
+                if (!searchText.isEmpty()) {
+                    contacts = databaseHelper.searchContacts(searchText);
+                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this);
+                    Toast.makeText(MainActivity.this, searchText, Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(MainActivity.this, "searchText", Toast.LENGTH_SHORT);
+                    contacts = databaseHelper.getAllContacts();
+                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this);
+                }
+                recyclerView.setAdapter(contactAdapter1);
+                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
 
         btnNewContact = findViewById(R.id.btnNewContact);
         btnNewContact.setOnClickListener(new View.OnClickListener() {
