@@ -60,6 +60,7 @@ public class ViewContact extends AppCompatActivity {
         imageView = findViewById(R.id.viewProfilePic);
         imageView.setImageResource(getProfilePic((getIntent().getStringExtra("id"))));
 
+
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +70,29 @@ public class ViewContact extends AppCompatActivity {
         });
 
         btnFav = findViewById(R.id.btnFav);
+        if (Objects.equals(getIntent().getStringExtra("isFavorite"), "0")) {
+            drawable = ContextCompat.getDrawable(ViewContact.this, R.drawable.heart);
+        } else {
+            drawable = ContextCompat.getDrawable(ViewContact.this, R.drawable.heart2);
+        }
+        btnFav.setCompoundDrawablesWithIntrinsicBounds(null, null, null, drawable);
+
         btnFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawable = ContextCompat.getDrawable(ViewContact.this, R.drawable.heart2);
+
+                textView = findViewById(R.id.data_isFavorite);
+                if (textView.getText().toString().equals("1")) {
+                    textView.setText("0");
+                    textView = findViewById(R.id.data_id);
+                    databaseHelper.markFavorite(textView.getText().toString(), "0");
+                    drawable = ContextCompat.getDrawable(ViewContact.this, R.drawable.heart);
+                } else {
+                    textView.setText("1");
+                    textView = findViewById(R.id.data_id);
+                    databaseHelper.markFavorite(textView.getText().toString(), "1");
+                    drawable = ContextCompat.getDrawable(ViewContact.this, R.drawable.heart2);
+                }
                 btnFav.setCompoundDrawablesWithIntrinsicBounds(null, null, null, drawable);
             }
         });

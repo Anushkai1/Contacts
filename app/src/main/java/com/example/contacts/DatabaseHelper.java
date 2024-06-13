@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.SplittableRandom;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "contacts.db";
@@ -63,6 +64,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_EMAIL, contact.email);
 
         db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(contact.id)});
+        db.close();
+    }
+
+    // Mark an existing contact
+    public void markFavorite(String id, String fav) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_IS_FAVORITE, fav);
+
+        db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
 
