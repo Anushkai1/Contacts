@@ -15,15 +15,15 @@ import java.util.ArrayList;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
     Context ct;
-    int[] imgs;
+    int[] imgs = {R.drawable.e, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};;
 
     ArrayList<ContactNew> contacts;
     private SelectListenr selectListenr;
 
-    public ContactAdapter(Context ct2, ArrayList<ContactNew> contacts2, int[] imgs2, SelectListenr selectListenr2) {
+    public ContactAdapter(Context ct2, ArrayList<ContactNew> contacts2, SelectListenr selectListenr2) {
         ct = ct2;
         contacts = contacts2;
-        imgs = imgs2;
+
         selectListenr = selectListenr2;
     }
 
@@ -42,8 +42,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         holder.id.setText(contacts.get(position).id);
         holder.email.setText(contacts.get(position).email);
         holder.isfavorite.setText(contacts.get(position).isFavorite);
-
-        holder.dp.setImageResource(imgs[position]);
+        holder.dp.setImageResource(getProfilePic(contacts.get(position).id));
     }
 
     @Override
@@ -78,6 +77,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
                 }
             });
         }
+    }
+
+    public int getProfilePic(String id) {
+        int idLastNum = Integer.parseInt(id.substring(id.length() - 1));
+        return imgs[idLastNum];
     }
 }
 

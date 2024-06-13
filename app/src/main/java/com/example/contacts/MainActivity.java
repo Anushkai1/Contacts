@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
-    private final int[] imgs = {R.drawable.e, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};
     private final int[] imgs2 = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
 
     @Override
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         }
 
         //Recycle view
-        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, imgs, this);
+        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, this);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
