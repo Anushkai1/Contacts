@@ -100,7 +100,30 @@ public class Form extends AppCompatActivity {
                     Toast.makeText(Form.this, "Contact Saved", 3).show();
                     intent = new Intent(Form.this, MainActivity.class);
                 } else {
+                    textView = findViewById(R.id.data_id);
 
+                    databaseHelper.updateContact(
+                            new ContactNew(
+                                    textView.getText().toString(),
+                                    name.getText().toString(),
+                                    phone.getText().toString(),
+                                    email.getText().toString(),
+                                    "0"
+                            )
+                    );
+
+                    Toast.makeText(Form.this, "Contact Saved", 3).show();
+
+                    intent = new Intent(Form.this, ViewContact.class);
+
+                    intent.putExtra("name", name.getText().toString());
+                    intent.putExtra("phone", phone.getText().toString());
+                    intent.putExtra("email", email.getText().toString());
+
+                    intent.putExtra("id", textView.getText().toString());
+
+                    textView = findViewById(R.id.data_isFavorite);
+                    intent.putExtra("isFavorite", textView.getText().toString());
                 }
                 startActivity(intent);
             }
