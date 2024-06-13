@@ -1,5 +1,6 @@
 package com.example.contacts;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -7,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -24,8 +27,9 @@ public class ViewContact extends AppCompatActivity {
     private ImageView imageView;
 
     Drawable drawable;
-   int[] imgs = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
+    int[] imgs = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
 
+    DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +81,29 @@ public class ViewContact extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                back();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ViewContact.this);
+                builder.setMessage("Delete this contact?");
+//              builder.setTitle("");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        TextView id = findViewById(R.id.data_id);
+                        databaseHelper.deleteContact(Integer.parseInt(id.getText().toString()));
+
+                        Toast.makeText(getApplicationContext(), "Contact Deleted", Toast.LENGTH_SHORT).show();
+                        back();
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                builder.create().show();
+//
             }
         });
 
@@ -102,7 +128,7 @@ public class ViewContact extends AppCompatActivity {
                 intent.putExtra("id", textView.getText().toString());
 
                 int imageId = getProfilePic(textView.getText().toString());
-                intent.putExtra("dp",imageId);
+                intent.putExtra("dp", imageId);
 
                 textView = findViewById(R.id.data_isFavorite);
                 intent.putExtra("isFavorite", textView.getText().toString());
