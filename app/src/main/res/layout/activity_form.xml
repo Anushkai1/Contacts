@@ -118,6 +118,62 @@
         app:layout_constraintStart_toStartOf="@+id/lable_email"
         app:layout_constraintTop_toBottomOf="@+id/lable_email" />
 
+    <!--Hidden Data-->
+    <TextView
+        android:id="@+id/data_name"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-32dp"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/data_phone"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-32dp"
+        android:layout_marginTop="0dp"
+        android:inputType="text"
+        android:text="phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/data_email"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-32dp"
+        android:layout_marginTop="40dp"
+        android:inputType="text"
+        android:text="email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/data_id"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-32dp"
+        android:layout_marginTop="60dp"
+        android:inputType="text"
+        android:text="id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/data_isFavorite"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-32dp"
+        android:layout_marginTop="80dp"
+        android:inputType="text"
+        android:text="Fav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
     <!-- End Form-->
     <Button
         android:id="@+id/btnSave"
