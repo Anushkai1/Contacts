@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Form extends AppCompatActivity {
-private Button btnBack, btnCancel, btnSave;
-private ImageView imageView;
+    private Button btnBack, btnCancel, btnSave;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,30 +27,6 @@ private ImageView imageView;
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back();
-            }
-        });
-
-        btnCancel = findViewById(R.id.btnCancel);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back();
-            }
-        });
-
-        btnSave = findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back();
-            }
         });
 
         TextView textView = findViewById(R.id.formTitle);
@@ -81,18 +58,65 @@ private ImageView imageView;
         textView.setText(getIntent().getStringExtra("isFavorite"));
 
         imageView = findViewById(R.id.selectUserImage);
-        imageView.setImageResource(getIntent().getIntExtra("dp",R.drawable.add_profile_pic));
+        imageView.setImageResource(getIntent().getIntExtra("dp", R.drawable.add_profile_pic));
+
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+
+        btnCancel = findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+
+        btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                TextView textView, name, phone, email;
+                DatabaseHelper databaseHelper = new DatabaseHelper(Form.this);
+
+                textView = findViewById(R.id.formTitle);
+                name = findViewById(R.id.input_name);
+                phone = findViewById(R.id.input_phone);
+                email = findViewById(R.id.input_email);
+
+                if (textView.getText().toString().equals("New Contact")) {
+                    databaseHelper.insertContact(
+                            new ContactNew(
+                                    name.getText().toString(),
+                                    phone.getText().toString(),
+                                    email.getText().toString()
+                            )
+                    );
+                    Toast.makeText(Form.this, "Contact Saved", 3).show();
+                    intent = new Intent(Form.this, MainActivity.class);
+                } else {
+
+                }
+                startActivity(intent);
+            }
+        });
 
     }
-    private void back(){
+
+    private void back() {
         Intent intent;
         TextView textView = findViewById(R.id.formTitle);
-        if(textView.getText().toString().equals("New Contact")){
+        if (textView.getText().toString().equals("New Contact")) {
 
             intent = new Intent(Form.this, MainActivity.class);
             startActivity(intent);
 
-        }else{
+        } else {
             intent = new Intent(Form.this, ViewContact.class);
 
             textView = findViewById(R.id.data_name);
@@ -112,8 +136,6 @@ private ImageView imageView;
 
             startActivity(intent);
         }
-
-
 
 
     }
