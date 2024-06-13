@@ -135,7 +135,6 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         Intent intent = new Intent(MainActivity.this, ViewContact.class);
         intent.putExtra("name", contacts.get(Position).name);
         intent.putExtra("phone", contacts.get(Position).phone);
-        intent.putExtra("dp", imgs2[Position]);
         intent.putExtra("id", contacts.get(Position).id);
         intent.putExtra("email", contacts.get(Position).email);
         intent.putExtra("isFavorite", contacts.get(Position).isFavorite);

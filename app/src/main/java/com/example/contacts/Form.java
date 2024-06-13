@@ -56,10 +56,29 @@ private ImageView imageView;
         textView.setText(getIntent().getStringExtra("formTitle"));
 
         textView = findViewById(R.id.input_name);
-        textView.setText(getIntent().getStringExtra("input_name"));
+        textView.setText(getIntent().getStringExtra("name"));
 
         textView = findViewById(R.id.input_phone);
-        textView.setText(getIntent().getStringExtra("input_phone"));
+        textView.setText(getIntent().getStringExtra("phone"));
+
+        textView = findViewById(R.id.input_email);
+        textView.setText(getIntent().getStringExtra("email"));
+
+
+        textView = findViewById(R.id.data_name);
+        textView.setText(getIntent().getStringExtra("name"));
+
+        textView = findViewById(R.id.data_phone);
+        textView.setText(getIntent().getStringExtra("phone"));
+
+        textView = findViewById(R.id.data_email);
+        textView.setText(getIntent().getStringExtra("email"));
+
+        textView = findViewById(R.id.data_id);
+        textView.setText(getIntent().getStringExtra("id"));
+
+        textView = findViewById(R.id.data_isFavorite);
+        textView.setText(getIntent().getStringExtra("isFavorite"));
 
         imageView = findViewById(R.id.selectUserImage);
         imageView.setImageResource(getIntent().getIntExtra("dp",R.drawable.add_profile_pic));
@@ -76,11 +95,20 @@ private ImageView imageView;
         }else{
             intent = new Intent(Form.this, ViewContact.class);
 
-            textView = findViewById(R.id.input_name);
+            textView = findViewById(R.id.data_name);
             intent.putExtra("name", textView.getText().toString());
 
-            textView = findViewById(R.id.input_phone);
+            textView = findViewById(R.id.data_phone);
             intent.putExtra("phone", textView.getText().toString());
+
+            textView = findViewById(R.id.data_email);
+            intent.putExtra("email", textView.getText().toString());
+
+            textView = findViewById(R.id.data_id);
+            intent.putExtra("id", textView.getText().toString());
+
+            textView = findViewById(R.id.data_isFavorite);
+            intent.putExtra("isFavorite", textView.getText().toString());
 
             startActivity(intent);
         }

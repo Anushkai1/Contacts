@@ -44,6 +44,15 @@ public class ViewContact extends AppCompatActivity {
         textView = findViewById(R.id.phoneText);
         textView.setText(getIntent().getStringExtra("phone"));
 
+        textView = findViewById(R.id.data_id);
+        textView.setText(getIntent().getStringExtra("id"));
+
+        textView = findViewById(R.id.data_email);
+        textView.setText(getIntent().getStringExtra("email"));
+
+        textView = findViewById(R.id.data_isFavorite);
+        textView.setText(getIntent().getStringExtra("isFavorite"));
+
         imageView = findViewById(R.id.viewProfilePic);
         imageView.setImageResource(getProfilePic((getIntent().getStringExtra("id"))));
 
@@ -79,12 +88,24 @@ public class ViewContact extends AppCompatActivity {
 
                 Intent intent = new Intent(ViewContact.this, Form.class);
                 intent.putExtra("formTitle", "Edit Contact");
+
                 textView = findViewById(R.id.nameText);
-                intent.putExtra("input_name", textView.getText().toString());
+                intent.putExtra("name", textView.getText().toString());
+
+                textView = findViewById(R.id.phoneText);
+                intent.putExtra("phone", textView.getText().toString());
+
+                textView = findViewById(R.id.data_email);
+                intent.putExtra("email", textView.getText().toString());
+
+                textView = findViewById(R.id.data_id);
+                intent.putExtra("id", textView.getText().toString());
+
                 int imageId = getProfilePic(textView.getText().toString());
                 intent.putExtra("dp",imageId);
-                textView = findViewById(R.id.phoneText);
-                intent.putExtra("input_phone", textView.getText().toString());
+
+                textView = findViewById(R.id.data_isFavorite);
+                intent.putExtra("isFavorite", textView.getText().toString());
 
                 startActivity(intent);
             }
