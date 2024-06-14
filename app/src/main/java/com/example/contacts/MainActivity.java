@@ -8,18 +8,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.carousel.CarouselLayoutManager;
 
 import java.util.ArrayList;
 
@@ -91,9 +87,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
                 if (!searchText.isEmpty()) {
                     contacts = databaseHelper.searchContacts(searchText);
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
-                    Toast.makeText(MainActivity.this, searchText, Toast.LENGTH_SHORT);
                 } else {
-                    Toast.makeText(MainActivity.this, "searchText", Toast.LENGTH_SHORT);
                     contacts = databaseHelper.getAllContacts();
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
                 }
@@ -116,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
