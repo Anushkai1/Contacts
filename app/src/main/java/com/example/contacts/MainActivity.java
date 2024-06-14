@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         //End Recycle view
 
+        toggleFavSection(1);
 
         // Set up the TextWatcher for the search EditText
         searchEditText = findViewById(R.id.search);
@@ -83,13 +86,21 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String searchText = searchEditText.getText().toString();
-                ContactAdapter contactAdapter1;
+                ContactAdapter contactAdapter1, contactAdapter2;
                 if (!searchText.isEmpty()) {
                     contacts = databaseHelper.searchContacts(searchText);
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
+
+                    toggleFavSection(0);
                 } else {
                     contacts = databaseHelper.getAllContacts();
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
+
+                    contactAdapter2 = new ContactAdapter(MainActivity.this, favContacts, MainActivity.this, 2);
+                    recyclerView2.setAdapter(contactAdapter2);
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+
+                    toggleFavSection(1);
                 }
                 recyclerView.setAdapter(contactAdapter1);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -121,5 +132,39 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         intent.putExtra("email", contacts.get(Position).email);
         intent.putExtra("isFavorite", contacts.get(Position).isFavorite);
         startActivity(intent);
+    }
+
+    public void toggleFavSection(int state) {
+        ViewGroup.LayoutParams paramsRec, paramsTitle;
+        ViewGroup.MarginLayoutParams mParamsR, mParamsT;
+
+        TextView favTitle, allTitle;
+        favTitle = findViewById(R.id.favTitle);
+        allTitle = findViewById(R.id.allc);
+
+        paramsRec = recyclerView2.getLayoutParams();
+        paramsTitle = favTitle.getLayoutParams();
+
+        mParamsT = (ViewGroup.MarginLayoutParams) favTitle.getLayoutParams();
+        mParamsR = (ViewGroup.MarginLayoutParams) recyclerView2.getLayoutParams();
+
+        paramsTitle.height = paramsRec.height = 0;
+        mParamsT.topMargin = mParamsR.topMargin = 0;
+
+        if (state == 1 && !favContacts.isEmpty()) {
+            paramsTitle.height = Utils.dpToPx(this, 14);
+            mParamsT.topMargin = Utils.dpToPx(this, 8);
+
+            paramsRec.height = Utils.dpToPx(this, 78);
+            mParamsR.topMargin = Utils.dpToPx(this, 8);
+        }
+
+        recyclerView2.setLayoutParams(paramsRec);
+        favTitle.setLayoutParams(paramsTitle);
+        allTitle.setLayoutParams(paramsTitle);
+
+        recyclerView2.setLayoutParams(mParamsR);
+        favTitle.setLayoutParams(mParamsT);
+        allTitle.setLayoutParams(mParamsT);
     }
 }
