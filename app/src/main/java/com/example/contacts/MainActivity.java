@@ -15,20 +15,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.carousel.CarouselLayoutManager;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SelectListenr {
-    private Button btnNewContact, Kevin, Gwen, Oliver, Natasha, John;
-    private RecyclerView recyclerView;
+    private Button btnNewContact;
+    private RecyclerView recyclerView, recyclerView2;
 
     ArrayList<ContactNew> contacts = new ArrayList<>();
+    ArrayList<ContactNew> favContacts = new ArrayList<>();
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
     EditText searchEditText;
-    private final int[] imgs2 = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,11 +60,19 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             databaseHelper.insertContact(new ContactNew("Jack Orange", "+94 70 012 3456", "jack@sjp.ac.lk"));
         }
 
-        //Recycle view
-        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, this);
+        //Setup Recyclerview
+        ContactAdapter contactAdapter = new ContactAdapter(this, contacts, this, 1);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //End Recycle view
+
+        //Setup Recyclerview for Favorite
+        favContacts = databaseHelper.getFavoriteContacts();
+        contactAdapter = new ContactAdapter(this, favContacts, this, 2);
+        recyclerView2 = findViewById(R.id.recyclerview2);
+        recyclerView2.setAdapter(contactAdapter);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         //End Recycle view
 
 
@@ -79,12 +90,12 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
                 ContactAdapter contactAdapter1;
                 if (!searchText.isEmpty()) {
                     contacts = databaseHelper.searchContacts(searchText);
-                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this);
+                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
                     Toast.makeText(MainActivity.this, searchText, Toast.LENGTH_SHORT);
                 } else {
                     Toast.makeText(MainActivity.this, "searchText", Toast.LENGTH_SHORT);
                     contacts = databaseHelper.getAllContacts();
-                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this);
+                    contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
                 }
                 recyclerView.setAdapter(contactAdapter1);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -106,66 +117,6 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             }
         });
 
-        //OnClick Fav
-        Kevin = findViewById(R.id.favcontact1);
-        Kevin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                intent.putExtra("name", "Kevin");
-                intent.putExtra("phone", "+94 70 012 3456");
-                intent.putExtra("dp", R.drawable.nb);
-                startActivity(intent);
-            }
-        });
-
-        Gwen = findViewById(R.id.favcontact2);
-        Gwen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                intent.putExtra("name", "Gwen");
-                intent.putExtra("phone", "+94 70 012 3456");
-                intent.putExtra("dp", R.drawable.nc);
-                startActivity(intent);
-            }
-        });
-
-        Oliver = findViewById(R.id.favcontact3);
-        Oliver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                intent.putExtra("name", "Oliver");
-                intent.putExtra("phone", "+94 70 012 3456");
-                intent.putExtra("dp", R.drawable.ni);
-                startActivity(intent);
-            }
-        });
-
-        Natasha = findViewById(R.id.favcontact4);
-        Natasha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                intent.putExtra("name", "Natasha");
-                intent.putExtra("phone", "+94 70 012 3456");
-                intent.putExtra("dp", R.drawable.ng);
-                startActivity(intent);
-            }
-        });
-
-        John = findViewById(R.id.favcontact5);
-        John.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewContact.class);
-                intent.putExtra("name", "John");
-                intent.putExtra("phone", "+94 70 012 3456");
-                intent.putExtra("dp", R.drawable.nd);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

@@ -130,5 +130,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return contactList;
     }
+
+    public ArrayList<ContactNew> getFavoriteContacts() {
+        ArrayList<ContactNew> contactList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_IS_FAVORITE + " = 1", null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") ContactNew contact = new ContactNew(
+                        cursor.getString(cursor.getColumnIndex(COLUMN_ID)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_PHONE)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)),
+                        cursor.getString(cursor.getColumnIndex(COLUMN_IS_FAVORITE))
+                );
+                contactList.add(contact);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return contactList;
+    }
 }
 
