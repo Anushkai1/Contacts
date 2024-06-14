@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SelectListenr {
-    private Button btnNewContact;
+    private Button btnNewContact, clearSearch;
     private RecyclerView recyclerView, recyclerView2;
 
     ArrayList<ContactNew> contacts = new ArrayList<>();
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
 
                     toggleFavSection(0);
+                    toggleVisibleBtnClearSearch(1);
                 } else {
                     contacts = databaseHelper.getAllContacts();
                     contactAdapter1 = new ContactAdapter(MainActivity.this, contacts, MainActivity.this, 1);
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
                     recyclerView2.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
                     toggleFavSection(1);
+                    toggleVisibleBtnClearSearch(0);
                 }
                 recyclerView.setAdapter(contactAdapter1);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -111,6 +113,13 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             }
         });
 
+        clearSearch = findViewById(R.id.clearSearch);
+        clearSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchEditText.setText("");
+            }
+        });
 
         btnNewContact = findViewById(R.id.btnNewContact);
         btnNewContact.setOnClickListener(new View.OnClickListener() {
@@ -166,5 +175,17 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         recyclerView2.setLayoutParams(mParamsR);
         favTitle.setLayoutParams(mParamsT);
         allTitle.setLayoutParams(mParamsT);
+    }
+
+    public void toggleVisibleBtnClearSearch(int state) {
+        ViewGroup.MarginLayoutParams params;
+        params = (ViewGroup.MarginLayoutParams) clearSearch.getLayoutParams();
+        params.rightMargin = Utils.dpToPx(this, -74);
+
+        if (state == 1) {
+            params.rightMargin = Utils.dpToPx(this, 74);
+        }
+
+        clearSearch.setLayoutParams(params);
     }
 }
