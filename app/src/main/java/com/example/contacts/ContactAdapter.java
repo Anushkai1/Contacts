@@ -82,7 +82,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
                     if (selectListenr2 != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            selectListenr2.onItemCLicked(position);
+                            selectListenr2.onItemCLicked(position, type);
                         }
                     }
                 }

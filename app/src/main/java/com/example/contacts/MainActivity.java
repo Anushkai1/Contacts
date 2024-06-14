@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -133,13 +134,21 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
     }
 
     @Override
-    public void onItemCLicked(int Position) {
+    public void onItemCLicked(int Position, int isFav) {
         Intent intent = new Intent(MainActivity.this, ViewContact.class);
-        intent.putExtra("name", contacts.get(Position).name);
-        intent.putExtra("phone", contacts.get(Position).phone);
-        intent.putExtra("id", contacts.get(Position).id);
-        intent.putExtra("email", contacts.get(Position).email);
-        intent.putExtra("isFavorite", contacts.get(Position).isFavorite);
+        if (isFav == 1) {
+            intent.putExtra("name", contacts.get(Position).name);
+            intent.putExtra("phone", contacts.get(Position).phone);
+            intent.putExtra("id", contacts.get(Position).id);
+            intent.putExtra("email", contacts.get(Position).email);
+            intent.putExtra("isFavorite", contacts.get(Position).isFavorite);
+        } else {
+            intent.putExtra("name", favContacts.get(Position).name);
+            intent.putExtra("phone", favContacts.get(Position).phone);
+            intent.putExtra("id", favContacts.get(Position).id);
+            intent.putExtra("email", favContacts.get(Position).email);
+            intent.putExtra("isFavorite", favContacts.get(Position).isFavorite);
+        }
         startActivity(intent);
     }
 
