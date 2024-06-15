@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
 
         int maxId = databaseHelper.getMaxId();
         if (maxId == 1) {
-            databaseHelper.insertContact(new ContactNew("Alice Johnson", "+94 71 123 4567", "alice@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Bob Smith", "+94 72 234 5678", "bob@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Charlie Brown", "+94 73 345 6789", "charlie@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("David White", "+94 74 456 7890", "david@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Eve Black", "+94 75 567 8901", "eve@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Frank Green", "+94 76 678 9012", "frank@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Grace Blue", "+94 77 789 0123", "grace@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Hank Purple", "+94 78 890 1234", "hank@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Ivy Red", "+94 79 901 2345", "ivy@sjp.ac.lk"));
-            databaseHelper.insertContact(new ContactNew("Jack Orange", "+94 70 012 3456", "jack@sjp.ac.lk"));
+            databaseHelper.insertContact(new ContactNew("Stephen Amell", "+94 71 123 4567", "st Amell@arrow.com"));
+            databaseHelper.insertContact(new ContactNew("Emma Stone", "+94 73 345 6789", "emmaStone@lalaland.com"));
+            databaseHelper.insertContact(new ContactNew("1", "Tom Cruise", "+94 72 234 5678", "tomCruise@mission.com", "1"));
+            databaseHelper.insertContact(new ContactNew("Roy Harper", "+94 74 456 7890", "royHarper@arrow.com"));
+            databaseHelper.insertContact(new ContactNew("1", "Natasha Romanoff", "+94 76 678 9012", "natasha@shield.com", "1"));
+            databaseHelper.insertContact(new ContactNew("Megan Fox", "+94 77 789 0123", "meganFox@trans.com"));
+            databaseHelper.insertContact(new ContactNew("John Diggle", "+94 75 567 8901", "johnDiggle@arrow.com"));
+            databaseHelper.insertContact(new ContactNew("Milar Blunt", "+94 78 890 1234", "emilyBlunt@edge.com"));
+            databaseHelper.insertContact(new ContactNew("Hermione Granger", "+94 70 012 3456", "hermione@hogwarts.com"));
+            databaseHelper.insertContact(new ContactNew("1", "Jason Statham", "+94 79 901 2345", "jasonStatham@tran.com", "1"));
         }
 
         //Setup Recyclerview

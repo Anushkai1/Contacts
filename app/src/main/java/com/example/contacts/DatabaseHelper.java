@@ -49,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_NAME, contact.name);
         values.put(COLUMN_PHONE, contact.phone);
         values.put(COLUMN_EMAIL, contact.email);
-        values.put(COLUMN_IS_FAVORITE, "0");
+        values.put(COLUMN_IS_FAVORITE, contact.isFavorite);
 
         db.insert(TABLE_NAME, null, values);
         db.close();
