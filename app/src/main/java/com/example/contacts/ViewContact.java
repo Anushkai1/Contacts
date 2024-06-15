@@ -27,7 +27,7 @@ public class ViewContact extends AppCompatActivity {
     private ImageView imageView;
 
     Drawable drawable;
-    int[] imgs = {R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj, R.drawable.nl};
+    int[] imgs = {R.drawable.nl, R.drawable.ne, R.drawable.nb, R.drawable.nc, R.drawable.nd, R.drawable.nf, R.drawable.ng, R.drawable.nh, R.drawable.ni, R.drawable.nj};
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
 

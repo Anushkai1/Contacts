@@ -17,7 +17,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     Context ct;
     int type;
-    int[] imgs = {R.drawable.e, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j, R.drawable.l};
+    int[] imgs = {R.drawable.l, R.drawable.e, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j};
     ;
 
     ArrayList<ContactNew> contacts;
