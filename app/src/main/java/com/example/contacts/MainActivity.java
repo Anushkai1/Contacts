@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
 
         contacts = databaseHelper.getAllContacts();
 
-        if (contacts.isEmpty()) {
+        int maxId = databaseHelper.getMaxId();
+        if (maxId == 1) {
             databaseHelper.insertContact(new ContactNew("Alice Johnson", "+94 71 123 4567", "alice@sjp.ac.lk"));
             databaseHelper.insertContact(new ContactNew("Bob Smith", "+94 72 234 5678", "bob@sjp.ac.lk"));
             databaseHelper.insertContact(new ContactNew("Charlie Brown", "+94 73 345 6789", "charlie@sjp.ac.lk"));
