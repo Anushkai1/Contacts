@@ -152,5 +152,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return contactList;
     }
+
+    public int getMaxId() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, "0");
+        values.put(COLUMN_PHONE, "0");
+        values.put(COLUMN_EMAIL, "0");
+        values.put(COLUMN_IS_FAVORITE, "0");
+
+        db.insert(TABLE_NAME, null, values);
+
+        String SELECT_MAX_ID = "SELECT MAX(" + COLUMN_ID + ") FROM " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(SELECT_MAX_ID, null);
+
+        int maxId = 0; // Initialize to -1 in case no rows are found
+
+        if (cursor.moveToFirst()) {
+            maxId = cursor.getInt(0);
+        }
+
+        cursor.close();
+
+        db.delete(TABLE_NAME, COLUMN_NAME + "=? AND " + COLUMN_PHONE + "=? AND " + COLUMN_EMAIL + "=? AND " + COLUMN_IS_FAVORITE + "=?",
+                new String[]{"0", "0", "0", "0"});
+        db.close();
+
+        return maxId;
+    }
 }
 
