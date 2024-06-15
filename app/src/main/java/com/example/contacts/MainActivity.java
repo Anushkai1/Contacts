@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             return insets;
         });
 
-        contacts = databaseHelper.getAllContacts();
-
         int maxId = databaseHelper.getMaxId();
         if (maxId == 1) {
             databaseHelper.insertContact(new ContactNew("Stephen Amell", "+94 71 123 4567", "st Amell@arrow.com"));
@@ -59,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             databaseHelper.insertContact(new ContactNew("Hermione Granger", "+94 70 012 3456", "hermione@hogwarts.com"));
             databaseHelper.insertContact(new ContactNew("1", "Jason Statham", "+94 79 901 2345", "jasonStatham@tran.com", "1"));
         }
+        
+        contacts.clear();
+        contacts = databaseHelper.getAllContacts();
 
         //Setup Recyclerview
         ContactAdapter contactAdapter = new ContactAdapter(this, contacts, this, 1);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
         //End Recycle view
 
         //Setup Recyclerview for Favorite
+        favContacts.clear();
         favContacts = databaseHelper.getFavoriteContacts();
         contactAdapter = new ContactAdapter(this, favContacts, this, 2);
         recyclerView2 = findViewById(R.id.recyclerview2);
