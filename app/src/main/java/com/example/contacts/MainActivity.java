@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements SelectListenr {
             databaseHelper.insertContact(new ContactNew("Hermione Granger", "+94 70 012 3456", "hermione@hogwarts.com"));
             databaseHelper.insertContact(new ContactNew("1", "Jason Statham", "+94 79 901 2345", "jasonStatham@tran.com", "1"));
         }
-        
+
         contacts.clear();
         contacts = databaseHelper.getAllContacts();
 

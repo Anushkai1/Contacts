@@ -9,10 +9,10 @@
         <item name="android:background">@color/transparent</item>
         <item name="android:fontFamily">@font/medium</item>
         <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">54dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">13sp</item>
-        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
         <item name="android:elevation">0dp</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
@@ -42,8 +42,8 @@
         <item name="android:letterSpacing">0.08</item>
         <item name="android:textColor">@color/primary</item>
         <item name="android:fontFamily">@font/medium</item>
-        <item name="android:layout_width">14dp</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">14dp</item>
         <item name="android:textSize">12sp</item>
     </style>
 
