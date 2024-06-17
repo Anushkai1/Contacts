@@ -1,11 +1,48 @@
+# Contact Management App
+
 <p align="center">
   <img width="70%"  src="/banner.png" alt="Screen Shoots of App">
 </p>
 
-### 🤔 Overview
-The Contact app I created using Android Studio and Java offers users a streamlined interface to manage their contacts effectively. With three distinct layouts, users can navigate seamlessly through their contacts. The home layout serves as a hub, presenting all contacts along with the option to mark favorites for quick access. Upon selecting a contact, the second layout provides comprehensive details including name, phone number, and call history, alongside convenient buttons for various actions like editing, deleting, messaging, calling, and video calling. The third layout offers a user-friendly form for adding new contacts or editing existing ones. While the app doesn't rely on a database, it efficiently utilizes hardcoded contact lists and includes an array of profile pictures for enhanced personalization. Designed meticulously using Figma, the app prioritizes both functionality and visual appeal, ensuring a seamless user experience throughout.
-<br>
+
+## Overview
+
+The Contact Management App, developed using Android Studio and Java, provides users with an efficient and intuitive interface for managing their contacts. The app includes three distinct layouts, ensuring seamless navigation and enhanced user experience. 
+
+## Features
+
+1. **Home Layout**
+   - Serves as the hub for all and favorit contacts.
+   - Displays a comprehensive list of contacts.
+
+2. **Contact Details Layout**
+   - Provides detailed information about each contact, including:
+     - Name
+     - Phone number
+     - Call history
+   - Offers convenient buttons for:
+     - Editing
+     - Deleting
+     - Mark contacts as favorites for quick access.
+
+3. **Add/Edit Contact Layout**
+   Presents a user-friendly form for adding new contacts or editing existing ones.
 
 
-<a href="https://github.com/Anushkai1/Contacts/releases/tag/1.0.0">Download Release</a>
+## Technical Details
+
+- **Programming Language:** Java
+- **Development Environment:** Android Studio
+- **Database:** SQLite
+- **Design Tool:** Figma
+
+## Installation
+
+1. Clone the repository from GitHub.
+2. Open the project in Android Studio.
+3. Build and run the app on an Android emulator or physical device.
+
+
+
+## <a href="https://github.com/Anushkai1/Contacts/releases/tag/2.0.0">Download Release</a>
     
